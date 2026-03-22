@@ -18,6 +18,12 @@ export default function IngredientsList(props) {
                     {props.isLoading ? "Getting recipe..." : "Get a recipe"}
                 </button>
             </div>}
+
+            {props.ingredients.length <= 3 && (
+                <p>
+                    Add a few more ingredients to unlock a recipe suggestion.
+                </p>
+            )}
         </section>
     )
 }
