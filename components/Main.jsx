@@ -30,7 +30,14 @@ export default function Main() {
     }
 
     function addIngredient(formData) {
-        const newIngredient = formData.get("ingredient")
+        const rawIngredient = formData.get("ingredient")
+        const newIngredient = rawIngredient.trim()
+
+        if (!newIngredient) {
+            // Ignore empty or whitespace-only submissions
+            return
+        }
+
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
     }
 
