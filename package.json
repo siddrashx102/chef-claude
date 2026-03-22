@@ -1,0 +1,21 @@
+{
+  "name": "Scrim-s06ivq7",
+  "description": "https://scrimba.com/fullstack-path-c0fullstack/~072g/s0joknua8s/head",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "@anthropic-ai/sdk": "0.80.0",
+    "@huggingface/inference": "4.13.15",
+    "react-markdown": "10.1.0",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "*"
+  }
+}
