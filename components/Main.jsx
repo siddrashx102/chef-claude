@@ -9,6 +9,7 @@ export default function Main() {
     )
     const [recipe, setRecipe] = React.useState("")
     const [isLoading, setIsLoading] = React.useState(false)
+    const [error, setError] = React.useState("")
     const recipeSection = React.useRef(null)
 
     React.useEffect(() => {
@@ -23,10 +24,16 @@ export default function Main() {
     }, [recipe])
 
     async function getRecipe() {
+        setError("")
         setIsLoading(true)
-        const recipeMarkdown = await getRecipeFromChefClaude(ingredients)
-        setRecipe(recipeMarkdown)
-        setIsLoading(false)
+        try {
+            const recipeMarkdown = await getRecipeFromChefClaude(ingredients)
+            setRecipe(recipeMarkdown)
+        } catch (e) {
+            setError("Sorry, something went wrong while generating your recipe. Please try again.")
+        } finally {
+            setIsLoading(false)
+        }
     }
 
     function addIngredient(formData) {
@@ -72,6 +79,8 @@ export default function Main() {
                     isLoading={isLoading}
                 />
             }
+
+            {error && <p style={{ color: "crimson" }}>{error}</p>}
 
             {recipe && <ClaudeRecipe recipe={recipe} />}
         </main>
