@@ -51,6 +51,7 @@ export default function Main() {
                     ref={recipeSection}
                     ingredients={ingredients}
                     getRecipe={getRecipe}
+                    isLoading={isLoading}
                 />
             }
 
