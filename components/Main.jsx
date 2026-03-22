@@ -23,8 +23,10 @@ export default function Main() {
     }, [recipe])
 
     async function getRecipe() {
+        setIsLoading(true)
         const recipeMarkdown = await getRecipeFromChefClaude(ingredients)
         setRecipe(recipeMarkdown)
+        setIsLoading(false)
     }
 
     function addIngredient(formData) {
