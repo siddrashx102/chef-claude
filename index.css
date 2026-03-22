@@ -26,6 +26,12 @@ header > h1 {
     font-weight: 400;
 }
 
+header > div p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #6B7280;
+}
+
 main {
     padding: 30px 30px 10px;
 }
