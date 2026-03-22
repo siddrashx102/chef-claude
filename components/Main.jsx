@@ -77,10 +77,12 @@ export default function Main() {
                     isLoading={isLoading}
                 />
             ) : (
-                <p>
-                    Start by adding a few ingredients you have on hand above.
-                    Once you have at least four, Chef Claude will suggest a recipe.
-                </p>
+                <div className="empty-state">
+                    <p>
+                        Start by adding a few ingredients you have on hand above.
+                        Once you have at least four, Chef Claude will suggest a recipe.
+                    </p>
+                </div>
             )}
 
             {error && <p style={{ color: "crimson" }}>{error}</p>}

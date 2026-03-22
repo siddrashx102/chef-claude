@@ -115,6 +115,18 @@ ul.ingredients-list>li {
     cursor: pointer;
 }
 
+.empty-state {
+    margin: 32px auto 0;
+    padding: 18px 20px;
+    max-width: 640px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(15, 23, 42, 0.08);
+    color: #4B5563;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
 .suggested-recipe-container {
     color: #475467;
     line-height: 28px;
@@ -170,5 +182,24 @@ ul.ingredients-list>li {
 
     ul.ingredients-list {
         padding-left: 20px;
+    }
+
+    .empty-state {
+        font-size: 1rem;
+        line-height: 1.6;
+        padding: 18px 16px;
+    }
+}
+
+@media (min-height: 800px) {
+    main {
+        min-height: calc(100vh - 96px);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .empty-state {
+        margin-top: auto;
+        margin-bottom: auto;
     }
 }
