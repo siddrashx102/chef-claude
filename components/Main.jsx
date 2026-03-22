@@ -8,6 +8,7 @@ export default function Main() {
         ["chicken", "all the main spices", "corn", "heavy cream", "pasta"]
     )
     const [recipe, setRecipe] = React.useState("")
+    const [isLoading, setIsLoading] = React.useState(false)
     const recipeSection = React.useRef(null)
 
     React.useEffect(() => {
