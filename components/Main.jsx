@@ -4,9 +4,7 @@ import ClaudeRecipe from "./ClaudeRecipe"
 import { getRecipeFromChefClaude } from "../ai"
 
 export default function Main() {
-    const [ingredients, setIngredients] = React.useState(
-        ["chicken", "all the main spices", "corn", "heavy cream", "pasta"]
-    )
+    const [ingredients, setIngredients] = React.useState([])
     const [recipe, setRecipe] = React.useState("")
     const [isLoading, setIsLoading] = React.useState(false)
     const [error, setError] = React.useState("")
@@ -71,14 +69,19 @@ export default function Main() {
                 <button>Add ingredient</button>
             </form>
 
-            {ingredients.length > 0 &&
+            {ingredients.length > 0 ? (
                 <IngredientsList
                     ref={recipeSection}
                     ingredients={ingredients}
                     getRecipe={getRecipe}
                     isLoading={isLoading}
                 />
-            }
+            ) : (
+                <p>
+                    Start by adding a few ingredients you have on hand above.
+                    Once you have at least four, Chef Claude will suggest a recipe.
+                </p>
+            )}
 
             {error && <p style={{ color: "crimson" }}>{error}</p>}
 
