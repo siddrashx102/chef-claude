@@ -38,7 +38,18 @@ export default function Main() {
             return
         }
 
-        setIngredients(prevIngredients => [...prevIngredients, newIngredient])
+        setIngredients(prevIngredients => {
+            const exists = prevIngredients.some(
+                ingredient => ingredient.toLowerCase() === newIngredient.toLowerCase()
+            )
+
+            if (exists) {
+                // Already in the list; do not add again
+                return prevIngredients
+            }
+
+            return [...prevIngredients, newIngredient]
+        })
     }
 
     return (
